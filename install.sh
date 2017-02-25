@@ -1,13 +1,12 @@
 #!/bin/sh
 
-echo "Setting up your Mac..."
-
-# Check for Homebrew and install if we don't have it
+echo "Setting up..."
+# Check for Homebrew and install it if needed
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Update Homebrew recipes
+# Update Homebrew
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
@@ -18,11 +17,9 @@ brew bundle
 # mackup restore
 
 # Create a Sites directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
 # Set macOS preferences
-# We will run this last because this will reload the shell
 source macos
 
-
+echo "Your Mac is now ready ! "
