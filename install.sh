@@ -13,8 +13,10 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
-# brew install mackup
-# mackup restore
+# Cause i'm using mackup to backup my applications preferences
+# ( everything under /Library and some dotfiles)
+brew install mackup
+mackup restore
 
 # Create a Sites directory
 mkdir $HOME/Sites
